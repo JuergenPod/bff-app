@@ -40,13 +40,13 @@ export function PATInputStep({ onSuccess }: { onSuccess: () => void }) {
   };
 
   return (
-    <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl">
-      <h2 className="text-2xl font-bold text-gray-800 mb-1">Connect your vault</h2>
-      <p className="text-gray-500 text-sm mb-6">Your data is stored securely in your private GitHub repo.</p>
+    <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl dark:bg-slate-900/80">
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-1">Connect your vault</h2>
+      <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Your data is stored securely in your private GitHub repo.</p>
 
       <div className="space-y-4">
         <div>
-          <label className="text-sm font-medium text-gray-700 mb-1 block">GitHub PAT</label>
+          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">GitHub PAT</label>
           <div className="relative">
             <Input
               type={showPat ? "text" : "password"}
@@ -58,7 +58,7 @@ export function PATInputStep({ onSuccess }: { onSuccess: () => void }) {
             <button
               type="button"
               onClick={() => setShowPat((v) => !v)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500"
             >
               {showPat ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>
@@ -74,7 +74,7 @@ export function PATInputStep({ onSuccess }: { onSuccess: () => void }) {
         </div>
 
         <div>
-          <label className="text-sm font-medium text-gray-700 mb-1 block">Private repo</label>
+          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Private repo</label>
           <Input
             placeholder="owner/your-private-repo"
             value={repoInput}
@@ -87,7 +87,7 @@ export function PATInputStep({ onSuccess }: { onSuccess: () => void }) {
           <motion.div
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-red-600 text-sm bg-red-50 p-3 rounded-xl"
+            className="flex items-center gap-2 text-red-600 dark:text-red-400 text-sm bg-red-50 dark:bg-red-900/20 p-3 rounded-xl"
           >
             <AlertCircle className="w-4 h-4 shrink-0" />
             {errorMsg}
@@ -97,7 +97,7 @@ export function PATInputStep({ onSuccess }: { onSuccess: () => void }) {
           <motion.div
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-emerald-600 text-sm bg-emerald-50 p-3 rounded-xl"
+            className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm bg-emerald-50 dark:bg-emerald-900/20 p-3 rounded-xl"
           >
             <CheckCircle2 className="w-4 h-4" />
             Connected!

@@ -3,11 +3,11 @@ import type { Stats } from "@/types";
 interface StatCardProps { label: string; value: string | number; emoji: string; sub?: string }
 function StatCard({ label, value, emoji, sub }: StatCardProps) {
   return (
-    <div className="bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-4 shadow-sm">
+    <div className="bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-4 shadow-sm dark:bg-white/5 dark:border-violet-500/20">
       <div className="text-3xl mb-1">{emoji}</div>
-      <div className="text-2xl font-bold text-gray-800">{value}</div>
-      <div className="text-xs font-medium text-gray-500">{label}</div>
-      {sub && <div className="text-xs text-gray-400 mt-0.5">{sub}</div>}
+      <div className="text-2xl font-bold text-gray-800 dark:text-gray-100">{value}</div>
+      <div className="text-xs font-medium text-gray-500 dark:text-gray-400">{label}</div>
+      {sub && <div className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">{sub}</div>}
     </div>
   );
 }

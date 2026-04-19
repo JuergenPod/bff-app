@@ -50,17 +50,17 @@ export function SettingsPage() {
     <PageTransition>
       <GradientHeading className="text-2xl mb-6">Settings</GradientHeading>
 
-      <div className="bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-6 shadow-sm space-y-5">
+      <div className="bg-white/60 backdrop-blur-md border border-white/40 rounded-2xl p-6 shadow-sm space-y-5 dark:bg-white/5 dark:border-violet-500/20">
         <div>
-          <h3 className="font-semibold text-gray-800 mb-1">Current connection</h3>
-          <p className="text-sm text-gray-500">
-            Repo: <span className="font-mono text-gray-700">{owner}/{repo}</span>
+          <h3 className="font-semibold text-gray-800 dark:text-gray-100 mb-1">Current connection</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Repo: <span className="font-mono text-gray-700 dark:text-gray-300">{owner}/{repo}</span>
           </p>
           <div className="flex items-center gap-2 mt-1">
-            <p className="text-sm text-gray-500 font-mono">
+            <p className="text-sm text-gray-500 dark:text-gray-400 font-mono">
               PAT: {showPat ? pat : maskedPat}
             </p>
-            <button onClick={() => setShowPat((v) => !v)} className="text-gray-400">
+            <button onClick={() => setShowPat((v) => !v)} className="text-gray-400 dark:text-gray-500">
               {showPat ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
             </button>
           </div>
@@ -69,9 +69,9 @@ export function SettingsPage() {
         <Separator />
 
         <div className="space-y-3">
-          <h3 className="font-semibold text-gray-800">Update connection</h3>
+          <h3 className="font-semibold text-gray-800 dark:text-gray-100">Update connection</h3>
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-1 block">New PAT (leave blank to keep current)</label>
+            <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">New PAT (leave blank to keep current)</label>
             <Input
               type="password"
               placeholder="ghp_xxxxxxxxxxxx"
@@ -81,7 +81,7 @@ export function SettingsPage() {
             />
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-700 mb-1 block">Repo (owner/name)</label>
+            <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">Repo (owner/name)</label>
             <Input
               value={newRepo}
               onChange={(e) => setNewRepo(e.target.value)}

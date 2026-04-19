@@ -27,7 +27,7 @@ function DoneStep() {
   }, []);
 
   return (
-    <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 text-center shadow-xl">
+    <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 text-center shadow-xl dark:bg-slate-900/80">
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -36,8 +36,8 @@ function DoneStep() {
       >
         🎉
       </motion.div>
-      <h2 className="text-2xl font-bold text-gray-800 mb-2">Your vault is ready!</h2>
-      <p className="text-gray-500">Taking you to your memories...</p>
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">Your vault is ready!</h2>
+      <p className="text-gray-500 dark:text-gray-400">Taking you to your memories...</p>
     </div>
   );
 }
